@@ -1,7 +1,6 @@
 # kevinboucher-dot-com
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+EmberJS online résumé and sample website for Kevin Boucher UI/UX Engineer.
 
 ## Prerequisites
 
@@ -14,7 +13,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone git@github.com:kboucher/kevinboucher-dot-com.git` this repository
 * `cd kevinboucher-dot-com`
 * `npm install`
 

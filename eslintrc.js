@@ -84,7 +84,7 @@ module.exports = {
                     '^ember-cli-mirage',
                     '^ember-power-select',
                     '^ember-responsive',
-                    '^kevinboucher-dot-com',
+                    '^idhub-ui',
 
                     /* '^ember-light-table',
                        '^ember-responsive',
