@@ -7,4 +7,9 @@ export default class Router extends EmberRouter {
 }
 
 // eslint-disable-next-line array-callback-return
-Router.map(function() {});
+Router.map(function() {
+    this.route('contact');
+    this.route('home', { path: '/' });
+    this.route('resume');
+    this.route('portfolio');
+});
