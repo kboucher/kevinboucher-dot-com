@@ -1,3 +1,82 @@
 {{page-title (t "page_titles.contact")}}
 
-<h1>{{t "page_titles.contact"}}</h1>
+<div class="container page content-page contact-page">
+    <div class="row">
+        <div class="col s12 m10 offset-m1">
+            {{!-- TODO: Move contact form into a component --}}
+            {{#unless this.isFormSent}}
+                <h1>Contact me</h1>
+                <form
+                        class="validate"
+                        {{action "sendContactForm" on="submit"}}
+                    >
+
+                        <input type="hidden" name="recipient" value="kevin@kevinboucher.com">
+                        <input type="hidden" name="subject" value="KevinBoucher.com contact email">
+                        <input type="hidden" name="redirect" value="http://kevinboucher.com/contact?success">
+
+                        <div class="input-field">
+                            {{input
+                                class="validate"
+                                id="contact-name"
+                                name="name"
+                                required="required"
+                                type="text"
+                                value=this.model.name
+                            }}
+                            <label for="contact-name" data-error="Please include your name.">Name</label>
+                        </div>
+                        <div class="input-field">
+                            {{input
+                                class="validate"
+                                id="contact-email"
+                                name="email"
+                                required="required"
+                                type="email"
+                                value=this.model.email
+                            }}
+                            <label for="contact-email" data-error="Please include a valid email address.">Email</label>
+                        </div>
+                        <div class="input-field">
+                            {{textarea
+                                class="materialize-textarea"
+                                id="contact-message"
+                                name="tellme"
+                                required="required"
+                                value=this.model.message
+                            }}
+                            <label for="contact-message" data-error="Please include a message.">Message</label>
+                        </div>
+                        <div class="google-recaptcha">
+                            {{!-- Google recaptcha from ember-g-recaptcha --}}
+                            {{!-- {{g-recaptcha
+                                onExpired=(action "captchaExpired")
+                                onSuccess=(action "captchaResolved")
+                                ref=(mut gRecaptcha)
+                            }} --}}
+                            {{#if this.showCaptchaError}}
+                                <p class="error">
+                                    <i class="material-icons">arrow_upward</i>
+                                    Please verify your humanity.
+                                </p>
+                            {{/if}}
+                        </div>
+                        <div class="form-buttons">
+                            {{input type="submit" name="submit" class="waves-effect waves-light btn btn-large" value="Send"}}
+                    </div>
+                </form>
+        {{else}}
+            <h1>Thanks!</h1>
+            <p class="flow-text">
+                If you do not receive a timely response, please try emailing me directly at:
+                <br><br>
+                    kevin[at]kevinboucher[dot]com,
+                    <br><br>
+                    or calling:
+                    <br><br>
+                    (FIVE ONE TWO) NINE ONE SEVEN, SEVENTY-FIVE SEVENTY-FIVE.</p>
+                {{!-- {{site-footer}} --}}
+            {{/unless}}
+        </div>
+    </div>
+</div>
