@@ -1,0 +1,24 @@
+.home {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    h1 {
+        font-size: $fontHero1;
+        font-weight: bold;
+        line-height: 1;
+    }
+
+    h2 {
+        line-height: 1.4;
+        margin-bottom: 10vh;
+    }
+
+    hr {
+        margin: 1rem 4rem 1.25rem;
+        min-width: 20rem;
+        max-width: 40rem;
+    }
+}
