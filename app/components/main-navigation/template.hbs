@@ -1,11 +1,36 @@
-<ul class="navbar main-navigation">
-    <li class="nav-item">
-        <LinkTo class="nav-link" @route="resume">{{t "page_titles.resume"}}</LinkTo>
-    </li>
-    <li class="nav-item">
-        <LinkTo class="nav-link" @route="portfolio">{{t "page_titles.portfolio"}}</LinkTo>
-    </li>
-    <li class="nav-item">
-        <LinkTo class="nav-link" @route="contact">{{t "page_titles.contact"}}</LinkTo>
-    </li>
-</ul>
+<div class="main-navigation {{unless @isHome "alt-colors"}}">
+    <ul class="navbar list-inline">
+        <li class="nav-item">
+            <LinkTo
+                class="nav-link"
+                @route="home"
+            >
+                {{t "links.home"}}
+            </LinkTo>
+        </li>
+        <li class="nav-item">
+            <LinkTo
+                class="nav-link"
+                @route="resume"
+            >
+                {{t "links.resume"}}
+            </LinkTo>
+        </li>
+        <li class="nav-item">
+            <LinkTo
+                class="nav-link"
+                @route="portfolio"
+            >
+                {{t "links.portfolio"}}
+            </LinkTo>
+        </li>
+        <li class="nav-item">
+            <LinkTo
+                class="nav-link"
+                @route="contact"
+            >
+                {{t "links.contact"}}
+            </LinkTo>
+        </li>
+    </ul>
+</div>
