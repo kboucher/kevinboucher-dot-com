@@ -1,0 +1,56 @@
+{
+    "buttons": {
+        "send": "Send"
+    },
+    "chrome": {
+        "copyright": "&copy; {currentYear} Kevin Paul Boucher. All rights reserved.",
+        "position": "UI/UX Engineer",
+        "short_name": "Kevin Boucher",
+        "site_title": "Kevin Paul Boucher",
+        "site_subtitle": "JavaScript &middot; HTML &middot; CSS",
+        "tagline": "“Well done is better than well said.” &mdash;Benjamin Franklin"
+    },
+    "contact": {
+        "message_sent": "If you do not receive a timely response, please try emailing me directly at:<br><br>kevin[at]kevinboucher[dot]com,<br><br>or calling:<br><br>(FIVE ONE TWO) NINE ONE SEVEN, SEVENTY-FIVE SEVENTY-FIVE."
+    },
+    "error_messages": {
+        "invalid_captcha": "Please verify your humanity."
+    },
+    "headers": {
+        "message_sent": "Thanks!"
+    },
+    "labels": {
+        "download_resume": "Download résumé as PDF",
+        "email": "Email",
+        "experience": "Experience",
+        "loading": "Loading...",
+        "name": "Name",
+        "message": "Message",
+        "send_email": "Send Email",
+        "skills_set_tools": "Skills set &amp; tools",
+        "view_linked_in_profile": "View LinkedIn profile",
+        "view_github_profile": "View GitHub profile",
+        "view_stack_overflow_profile": "View StackOverflow profile"
+    },
+    "links": {
+        "contact": "Contact",
+        "download": "Download",
+        "email_kevin_boucher": "kevin[at]kevinboucher[dot]com",
+        "github": "GitHub",
+        "home": "Home",
+        "linked_in": "LinkedIn",
+        "portfolio": "Portfolio",
+        "resume": "Résumé",
+        "stack_overflow": "StackOverflow"
+    },
+    "page_titles": {
+        "contact": "Contact me",
+        "portfolio": "Portfolio",
+        "resume": "Résumé"
+    },
+    "placeholders": {
+        "email": "Your email address",
+        "message": "How can I help?",
+        "name": "Your name"
+    }
+}
