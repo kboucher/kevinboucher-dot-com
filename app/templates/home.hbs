@@ -1,10 +1,14 @@
-{{page-title (t "site_title")}}
+{{page-title (t "chrome.site_title")}}
 
 <div class="d-viewport home">
-    <h1>Kevin Boucher</h1>
-    <hr>
+    <h1>
+        <span data-shadow-text={{t "chrome.short_name"}}>
+            {{t "chrome.short_name"}}
+        </span>
+        <hr>
+    </h1>
     <h2>
-        UI/UX Engineer<br>
-        JavaScript &middot; HTML &middot; CSS
+        {{t "chrome.position"}}<br>
+        {{t "chrome.site_subtitle" htmlSafe=true}}
     </h2>
 </div>

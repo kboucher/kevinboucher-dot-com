@@ -1,5 +1,5 @@
-{{page-title (t "site_title")}}
+{{page-title (t "chrome.site_title")}}
 
 {{outlet}}
 
-<MainNavigation />
+<MainNavigation @isHome={{this.isHomeRoute}} />
