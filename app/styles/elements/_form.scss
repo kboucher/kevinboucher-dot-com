@@ -1,0 +1,11 @@
+form {
+    label {
+        &.required::after {
+            content: '(required)';
+        }
+    }
+
+    .button-group {
+        margin: 1rem 0;
+    }
+}

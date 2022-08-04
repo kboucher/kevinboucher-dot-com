@@ -1,6 +1,10 @@
 // Setup
 @import 'variables/index';
 @import 'ember-bootstrap/bootstrap';
+@import 'bootstrap-overrides/index';
+
+// Elements
+@import 'elements/index';
 
 // Layouts
 @import 'layouts/index';

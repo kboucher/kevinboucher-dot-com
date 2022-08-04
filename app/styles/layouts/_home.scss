@@ -1,24 +1,66 @@
 .home {
     align-items: center;
+    background-color: #29b6f6;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
 
     h1 {
-        font-size: $fontHero1;
+        color: $white;
+        font-size: 3.5rem;
         font-weight: bold;
-        line-height: 1;
+        letter-spacing: .146em;
+        line-height: 1em;
+        position: relative;
+        text-transform: uppercase;
+        transition: font-size .25s ease;
+
+        /**
+            Leverages `data-*` attributes and CSS `mask-image` to render home
+            page display text effect.
+         */
+        span::after {
+            color: rgba(0 0 0 / 35%);
+            content: attr(data-shadow-text);
+            left: .035em;
+            mask-image: url('/images/mask.png');
+            position: absolute;
+            text-shadow: none;
+            top: .035em;
+            width: 100%;
+            z-index: -1;
+        }
+
+        hr {
+            color: $body-color;
+            margin: 1.5rem 2rem;
+        }
     }
 
     h2 {
         line-height: 1.4;
         margin-bottom: 10vh;
+        transition: font-size .25s ease;
     }
+}
 
-    hr {
-        margin: 1rem 4rem 1.25rem;
-        min-width: 20rem;
-        max-width: 40rem;
+@include media-breakpoint-up(md) {
+    .home {
+        h1 {
+            font-size: $fontHero1;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .home {
+        h1 {
+            font-size: $fontHero2;
+        }
+
+        h2 {
+            font-size: $fontXxl;
+        }
     }
 }

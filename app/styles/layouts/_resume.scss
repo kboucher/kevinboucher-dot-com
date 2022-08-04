@@ -1,0 +1,46 @@
+.resume {
+    h2 {
+        border-bottom: .0625rem solid $gray-200;
+        font-weight: 600;
+        margin-bottom: .75em;
+        padding-bottom: .25em;
+    }
+
+    h3 {
+        font-weight: 600;
+    }
+
+    .contact-links {
+        li {
+            margin: 0;
+
+            /**
+                Leverages `::after` pseudo element to render non-semantic
+                "middot" bullets between inline list items.
+             */
+            &::after {
+                content: '•';
+                display: inline-block;
+                margin: 0 .5rem;
+            }
+
+            &:last-child::after {
+                content: '';
+            }
+        }
+    }
+
+    .position {
+        margin-bottom: 3rem;
+
+        &__organization {
+            margin-bottom: 0;
+        }
+    }
+
+    .skill-set {
+        ul {
+            padding-left: 1rem;
+        }
+    }
+}

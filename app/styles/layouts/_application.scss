@@ -1,10 +1,19 @@
 body {
-    min-width: 20rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: $min-viewport-width;
+    overflow-x: hidden;
+
+    & > .container {
+        margin: 2rem auto 7rem;
+    }
 }
 
 .d-viewport {
     bottom: 0;
     left: 0;
+    min-width: $min-viewport-width;
     position: fixed;
     right: 0;
     top: 0;

@@ -1,0 +1,32 @@
+.image-preview-modal {
+    &__preview {
+        button {
+            border: none;
+            padding: 1rem;
+
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.image-preview-modal__modal {
+    .modal-body {
+        padding: 0;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .modal-footer {
+        padding: 0;
+
+        p {
+            flex: 1 0 auto;
+            max-width: fit-content;
+            padding: 1rem 2rem;
+        }
+    }
+}

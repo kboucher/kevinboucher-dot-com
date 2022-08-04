@@ -1,0 +1,11 @@
+a {
+    &.icon-link {
+        align-items: center;
+        display: inline-flex;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

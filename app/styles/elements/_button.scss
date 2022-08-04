@@ -1,0 +1,34 @@
+.btn {
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-icon {
+    align-items: center;
+    display: inline-flex;
+}
+
+.btn-primary {
+    color: $white;
+
+    &:active,
+    &[disabled],
+    &.disabled,
+    &:focus,
+    &:hover {
+        color: $white;
+    }
+}
+
+button {
+    &[disabled]:disabled {
+        cursor: not-allowed;
+        pointer-events: unset;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .btn {
+        width: auto;
+    }
+}

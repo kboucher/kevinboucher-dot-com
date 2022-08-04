@@ -1,8 +1,19 @@
-$fontXs: 0.625rem;
-$fontSm: 0.875rem;
+$fontXs: .625rem;
+$fontSm: .875rem;
 $fontMd: 1rem;
 $fontLg: 1.25rem;
 $fontXl: 1.5rem;
 $fontXxl: 2rem;
 $fontHero1: 4rem;
 $fontHero2: 6rem;
+$fontHero3: 8rem;
+
+.container {
+    h1,
+    .h1,
+    .display-1 {
+        font-size: $fontHero1;
+        font-weight: 900;
+        line-height: 1;
+    }
+}
