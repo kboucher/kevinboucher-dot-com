@@ -1,5 +1,8 @@
 {{!-- template-lint-disable no-mut-helper --}}
-<div class="image-preview-modal__preview">
+<div
+    class="image-preview-modal__preview"
+    data-test-component="image-preview-modal-preview"
+>
     <button
         type="button"
         {{on "click" (fn (mut this.showModal) true)}}
@@ -14,6 +17,7 @@
 {{#if this.showModal}}
     <BsModal
         class="image-preview-modal__modal"
+        data-test-component="image-preview-modal-modal"
         @onHidden={{fn (mut this.showModal) false}}
         @size="xl"
         as |Modal|

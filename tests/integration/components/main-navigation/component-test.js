@@ -12,6 +12,6 @@ module('Integration | Component | main-navigation', function(hooks) {
 
         await render(hbs`<MainNavigation />`);
 
-        assert.dom(this.element).hasText('');
+        assert.dom('[data-test-component="main-navigation"]').exists();
     });
 });
