@@ -12,8 +12,10 @@
         "function-name-case": null,
         "indentation": 4,
         "no-descending-specificity": true,
+        "number-leading-zero": "never",
         "order/properties-alphabetical-order": true,
         "order/order": ["dollar-variables", "at-rules", "declarations", "rules"],
+        "selector-class-pattern": null,
         "shorthand-property-no-redundant-values": true,
         "string-quotes": "single"
     }
