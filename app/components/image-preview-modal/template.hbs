@@ -1,0 +1,38 @@
+{{!-- template-lint-disable no-mut-helper --}}
+<div class="image-preview-modal__preview">
+    <button
+        type="button"
+        {{on "click" (fn (mut this.showModal) true)}}
+    >
+        <img
+            src={{@imageSrc}}
+            alt={{@imageDesc}}
+        >
+    </button>
+</div>
+
+{{#if this.showModal}}
+    <BsModal
+        class="image-preview-modal__modal"
+        @onHidden={{fn (mut this.showModal) false}}
+        @size="xl"
+        as |Modal|
+    >
+        <Modal.header>
+            <h4 class="modal-title">{{@imageTitle}}</h4>
+        </Modal.header>
+        <Modal.body>
+            <div class="text-center {{unless @fullWidth "mx-5"}}">
+                <img
+                    alt={{@imageTitle}}
+                    src={{@imageSrc}}
+                    tabindex="0"
+                    {{on "click" (fn (mut this.showModal) true)}}
+                >
+            </div>
+        </Modal.body>
+        <Modal.footer>
+            <p>{{html-safe @imageDesc}}</p>
+        </Modal.footer>
+    </BsModal>
+{{/if}}

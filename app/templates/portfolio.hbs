@@ -1,116 +1,33 @@
 {{page-title (t "page_titles.portfolio")}}
 
 <div class="container page content-page portfolio-page">
-    <div class="row">
-        <div class="col s12">
-            <h1>Portfolio</h1>
-            <div class="row">
-                <div class="col s12 m6">
-                    {{!-- {{image-preview-modal
-                        alt="Texas.gov responsive"
-                        imageId="texas-gov-responsive"
-                        src="/images/screenshots/texasgov-full.png"
-                    }} --}}
-                    <h2>Texas.gov</h2>
-                    <p class="flow-text">Designed and developed the 2013 Texas.gov portal refresh. Built on the SharePoint platform this site is mobile-first responsive and is composed using a modular scale based on the golden mean.</p>
-                    <ul>
-                        <li><a href="http://www.interactivemediaawards.com/winners/certificate.asp?param=280867&cat=1">Interactive Media Award&mdash;Best In Class (2013)</a></li>
-                        <li><a href="http://www.govtech.com/cdg/digital-government-achievement/Best-of-the-Web--Digital-Government-Achievement-Awards-2013.html">Best Of the Web&mdash;Finalist (2013)</a></li>
-                    </ul>
-                </div>
-                <div class="col s12 m6">
-                    {{!-- {{image-preview-modal
-                        alt="MeToob (Custom WordPress theme)"
-                        imageId="metoob-wordpress-theme"
-                        src="/images/screenshots/metoob.png"
-                    }} --}}
-                    <h2>MeToob</h2>
-                    <p class="flow-text">Custom mobile-first responsive WordPress theme designed &amp; developed for DiviTree Media to be used in a series of educational video library websites. </p>
-                    <a href="http://diabeteshealthlibrary.com/">http://diabeteshealthlibrary.com/</a>
+    <h1 class="display-1">{{t "page_titles.portfolio"}}</h1>
+    <div class="row mt-3">
+        {{#each this.portfolioEntries as |portfolioEntry|}}
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="card mb-3 portfolio__entry">
+                    <div class="card-img-top">
+                        <ImagePreviewModal
+                            @fullWidth={{if (not-eq portfolioEntry.title "Texas.gov") true}}
+                            @imageDesc={{portfolioEntry.summary}}
+                            @imageSrc={{portfolioEntry.image}}
+                            @imageTitle={{portfolioEntry.title}}
+                        />
+                    </div>
+                    <div class="card-body">
+                        <h2>{{portfolioEntry.title}}</h2>
+                        <p>{{portfolioEntry.summary}}</p>
+                        <ul>
+                            {{#each portfolioEntry.links as |link|}}
+                                <li>
+                                    <a href={{link.url}}>{{link.title}}</a>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col s12 m6">
-                    {{!-- {{image-preview-modal
-                        alt="MAX Photo Manager"
-                        imageId="photo-manager"
-                        src="/images/screenshots/Photo-Manager.png"
-                    }} --}}
-                    <h2>MAX AD Photo Manager</h2>
-                    <p class="flow-text">Designed and implemented this interface for the MAX AD Photo Manager tool that allows car dealers to manage the marketing photos associated with a vehicle.</p>
-                </div>
-                <div class="col s12 m6">
-                    {{!-- {{image-preview-modal
-                        alt="MAX Snippet Collector"
-                        imageId="snippet-collector"
-                        src="/images/screenshots/snippet-collector.png"
-                    }} --}}
-                    <h2>Snippet Collector</h2>
-                    <p class="flow-text">Designed and implemented this internal tool used to manage the vehicle-related comments, accolades &amp; reviews that are incorporated into the MAX AD system.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12 m6">
-                    {{!-- {{image-preview-modal
-                        alt="MAX login page"
-                        imageId="max-login"
-                        src="/images/screenshots/max-standalone-login.png"
-                    }} --}}
-                    <h2>MAX Login Page</h2>
-                    <p class="flow-text">Alternate login page for Incisent users who subscribed only to the MAX suite of products. (Feature graphic was pulled from website.)</p>
-                </div>
-                <div class="col s12 m6">
-                    {{!-- {{image-preview-modal
-                        alt="Kevinboucher.com WordPress theme"
-                        imageId="kbcom-wordpress-theme"
-                        src="/images/screenshots/KBCOM-7-2011-portfolio.png"
-                    }} --}}
-                    <h2>KBCOM redesign</h2>
-                    <p class="flow-text">This design concept was implemented as a custom WordPress theme for this site.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12 m6">
-                    {{!-- {{image-preview-modal
-                        alt="MAX AD Design Proposal 3"
-                        imageId="max-redeisgn-3"
-                        src="/images/screenshots/MAX-Simple.png"
-                    }} --}}
-                    <h2>MAX AD Design Proposal 3</h2>
-                    <p class="flow-text">This is one of a few design concepts I submitted for a proposed redesign of Incisent’s MAX AD application.</p>
-                </div>
-                <div class="col s12 m6">
-                    {{!-- {{image-preview-modal
-                        alt="MAX AD Design Proposal 2"
-                        imageId="max-redeisgn-2"
-                        src="/images/screenshots/MAX-Redesign2.png"
-                    }} --}}
-                    <h2>MAX AD Design Proposal 2</h2>
-                    <p class="flow-text">This is one of a few design concepts I submitted for a proposed redesign of Incisent’s MAX AD application.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12 m6">
-                    {{!-- {{image-preview-modal
-                        alt="MAX AD Design Proposal 1"
-                        imageId="max-redeisgn-1"
-                        src="/images/screenshots/MAX-Redesign1.png"
-                    }} --}}
-                    <h2>MAX AD Design Proposal 1</h2>
-                    <p class="flow-text">This is one of a few design concepts submitted for a proposed redesign of Incisent’s MAX AD application.</p>
-                </div>
-                <div class="col s12 m6">
-                    {{!-- {{image-preview-modal
-                        alt="Liberty Hill Sports WordPress implementation"
-                        imageId="lhs-wordpress-site"
-                        src="/images/screenshots/liberty-hill-sports.png"
-                    }} --}}
-                    <h2>Liberty Hill Sports</h2>
-                    <p class="flow-text">This is a WordPress implementation of libertyhillsports.com. This site is affiliated with the Liberty Hill Leader newspaper and covers sports for the Liberty Hill area.</p>
-                </div>
-            </div>
-        </div>
+        {{/each}}
     </div>
-    {{!-- {{site-footer}} --}}
+    <SiteFooter />
 </div>
-
