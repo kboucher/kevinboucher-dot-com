@@ -11,17 +11,24 @@ import { tracked } from '@glimmer/tracking';
     @extends Ember.Controller
  */
 
-const contactFormEmail = 'kevin@kevinboucher.com';
-const mailScriptUrl = 'https://kevinboucher.com/cgi-sys/formmail.pl';
-const mailSubject = 'KevinBoucher.com contact email';
+/**
+    TODO: Uncomment this when SMTP script returns
+
+    const contactFormEmail = 'kevin@kevinboucher.com';
+    const mailScriptUrl = 'https://kevinboucher.com/cgi-sys/formmail.pl';
+    const mailSubject = 'KevinBoucher.com contact email';
+ */
 
 export default class ContactController extends Controller {
+    gRecaptcha = null;
     reCaptchaResponse = null;
 
     @tracked contactEmail;
     @tracked contactMessage;
+    @tracked contactMailTo;
     @tracked contactName;
     @tracked isHuman = false;
+    @tracked showBrokenEmailModal = false;
     @tracked showCaptchaError = false;
 
     /**
@@ -37,7 +44,7 @@ export default class ContactController extends Controller {
 
         return isHuman &&
             !isEmpty(contactEmail) &&
-            document.querySelector('[name="contact-email-input"]')
+            document.querySelector('[id="contact-email-input"]')
                 .validity
                 .valid;
     }
@@ -69,24 +76,37 @@ export default class ContactController extends Controller {
 
         @method onContactFormSubmit
      */
-    @action onContactFormSubmit() {
-        const { contactEmail, contactMessage, contactName } = this;
+    @action onContactFormSubmit(event) {
+        event.preventDefault();
 
-        fetch(mailScriptUrl, {
-            body: {
-                recipient: contactFormEmail,
-                subject: mailSubject,
-                name: contactName,
-                email: contactEmail,
-                message: contactMessage,
-            },
-            method: 'POST',
-        })
-            .then((/* response */) => {
-                // TODO: Handle server error
+        const { /* contactEmail, */ contactMessage, contactName } = this;
+
+        const emailBody = contactName || contactMessage ?
+            `?body=${contactName ? `${encodeURI(`${contactName}\n\n`)}` : ''}${contactMessage ? encodeURI(contactMessage) : ''}` :
+            '';
+
+        this.contactMailTo = `mailto:kevin@kevinboucher.com${emailBody}`;
+        this.showBrokenEmailModal = true;
+
+        /**
+            TODO: Uncomment this when SMTP script returns
+
+            fetch(mailScriptUrl, {
+                body: {
+                    recipient: contactFormEmail,
+                    subject: mailSubject,
+                    name: contactName,
+                    email: contactEmail,
+                    message: contactMessage,
+                },
+                method: 'POST',
             })
-            .catch((/* error */) => {
-                // TODO: Handle network error
-            });
+                .then((response) => {
+                    // TODO: Handle server error
+                })
+                .catch((error) => {
+                    // TODO: Handle network error
+                });
+         */
     }
 }

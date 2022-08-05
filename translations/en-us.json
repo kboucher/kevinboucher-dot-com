@@ -11,13 +11,15 @@
         "tagline": "“Well done is better than well said.” &mdash;Benjamin Franklin"
     },
     "contact": {
-        "message_sent": "If you do not receive a timely response, please try emailing me directly at:<br><br>kevin[at]kevinboucher[dot]com,<br><br>or calling:<br><br>(FIVE ONE TWO) NINE ONE SEVEN, SEVENTY-FIVE SEVENTY-FIVE."
+        "message_sent": "If you do not receive a timely response, please try emailing me directly at:<br><br>kevin[at]kevinboucher[dot]com,<br><br>or calling:<br><br>(FIVE ONE TWO) NINE ONE SEVEN, SEVENTY-FIVE SEVENTY-FIVE.",
+        "temporarily_broken": "Recent changes to the host server have disabled SMTP access from this site. Please email me directly at <a href=\"{contactMailTo}\">kevin@kevinboucher.com</a> or reach me by telephone at <span class=\"nowrap\">512-917-7575.</span>"
     },
     "error_messages": {
         "invalid_captcha": "Please verify your humanity."
     },
     "headers": {
-        "message_sent": "Thanks!"
+        "message_sent": "Thanks!",
+        "sorry": "Sorry for the Inconvenience"
     },
     "labels": {
         "download_resume": "Download résumé as PDF",

@@ -79,6 +79,7 @@
             <div class="google-recaptcha">
                 {{!-- Google recaptcha from `ember-g-recaptcha` --}}
                 <GRecaptcha
+                    @onRender={{fn (mut this.gRecaptcha)}}
                     @onExpired={{this.onCaptchaExpired}}
                     @onSuccess={{this.onCaptchaResolved}}
                 />
@@ -108,3 +109,25 @@
     {{/if}}
     <SiteFooter />
 </div>
+
+{{#if this.showBrokenEmailModal}}
+    <BsModal
+        class="broken-email-modal"
+        data-test-component="broken-email-modal"
+        @onHidden={{fn (mut this.showBrokenEmailModal) false}}
+        as |Modal|
+    >
+        <Modal.header>
+            <h4 class="modal-title">{{t "headers.sorry"}}</h4>
+        </Modal.header>
+        <Modal.body>
+            <p>
+                {{t
+                    "contact.temporarily_broken"
+                    contactMailTo=this.contactMailTo
+                    htmlSafe=true
+                }}
+            </p>
+        </Modal.body>
+    </BsModal>
+{{/if}}
