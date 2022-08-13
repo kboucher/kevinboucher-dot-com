@@ -5,20 +5,20 @@ import { isEmpty } from '@ember/utils';
 import { tracked } from '@glimmer/tracking';
 
 /**
+    TODO: Uncomment this when SMTP script returns
+
+    const mailScriptUrl = 'https://www.kevinboucher.com/cgi-sys/formmail.pl';
+    const mailSubject = 'KevinBoucher.com contact email';
+ */
+
+const contactFormEmail = 'kevin@kevinboucher.com';
+
+/**
     Provide Ember controller for the `ContactRoute`.
 
     @module ContactController
     @extends Ember.Controller
  */
-
-/**
-    TODO: Uncomment this when SMTP script returns
-
-    const contactFormEmail = 'kevin@kevinboucher.com';
-    const mailScriptUrl = 'https://kevinboucher.com/cgi-sys/formmail.pl';
-    const mailSubject = 'KevinBoucher.com contact email';
- */
-
 export default class ContactController extends Controller {
     gRecaptcha = null;
     reCaptchaResponse = null;
@@ -85,20 +85,20 @@ export default class ContactController extends Controller {
             `?body=${contactName ? `${encodeURI(`${contactName}\n\n`)}` : ''}${contactMessage ? encodeURI(contactMessage) : ''}` :
             '';
 
-        this.contactMailTo = `mailto:kevin@kevinboucher.com${emailBody}`;
+        this.contactMailTo = `mailto:${contactFormEmail}${emailBody}`;
         this.showBrokenEmailModal = true;
 
         /**
             TODO: Uncomment this when SMTP script returns
 
             fetch(mailScriptUrl, {
-                body: {
+                body: JSON.stringify({
                     recipient: contactFormEmail,
                     subject: mailSubject,
                     name: contactName,
                     email: contactEmail,
                     message: contactMessage,
-                },
+                }),
                 method: 'POST',
             })
                 .then((response) => {

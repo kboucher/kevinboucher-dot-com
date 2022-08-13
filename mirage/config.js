@@ -3,7 +3,11 @@ export default function() {
 
     this.passthrough(
         '/images/screenshots/**',
+        'https://kevinboucher.com/cgi-bin/formmail.pl',
+        'https://kevinboucher.com/cgi-sys/formmail.pl',
         'https://kevinboucher.com/images/**',
+        'https://www.kevinboucher.com/cgi-bin/formmail.pl',
+        'https://www.kevinboucher.com/cgi-sys/formmail.pl',
         'https://www.kevinboucher.com/images/**',
     );
 
