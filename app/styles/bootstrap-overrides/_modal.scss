@@ -1,7 +1,33 @@
+// Make modals full screen by default
 .modal {
     .modal-dialog {
-        &.modal-xl {
-            max-width: 90%;
+        .modal-content {
+            border-radius: 0;
+            left: 0;
+            min-width: $min-viewport-width;
+            position: fixed;
+            right: 0;
+            top: 0;
+
+            .modal-header {
+                .close {
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .modal {
+        .modal-dialog {
+            .modal-content {
+                border-radius: $modal-content-border-radius;
+                left: unset;
+                position: relative;
+                right: unset;
+                top: unset;
+            }
         }
     }
 }
