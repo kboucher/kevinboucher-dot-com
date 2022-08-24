@@ -6,6 +6,10 @@
     justify-content: center;
     text-align: center;
 
+    a {
+        color: $body-color;
+    }
+
     h1 {
         color: $white;
         font-size: 3.5rem;

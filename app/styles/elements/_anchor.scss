@@ -4,6 +4,10 @@ a {
         display: inline-flex;
         text-decoration: none;
 
+        i {
+            font-size: 1em;
+        }
+
         &:hover {
             text-decoration: none;
         }
