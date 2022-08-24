@@ -21,10 +21,9 @@
             page display text effect.
          */
         span::after {
-            color: rgba(0 0 0 / 35%);
+            color: rgba(0 0 0 / 25%);
             content: attr(data-shadow-text);
             left: .035em;
-            mask-image: url('/images/mask.png');
             position: absolute;
             text-shadow: none;
             top: .035em;

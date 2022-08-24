@@ -20,6 +20,7 @@
 /testem.log
 /yarn-error.log
 .stylelintcache
+/coverage**
 
 # ember-try
 /.node_modules.ember-try/

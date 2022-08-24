@@ -21,8 +21,9 @@
         "lint:js:fix": "eslint ./app --fix",
         "lint:scss": "stylelint ./app/styles --cache",
         "lint:scss:fix": "stylelint ./app/styles --fix",
+        "posttest": "ember coverage-merge",
         "start": "ember serve",
-        "test": "npm-run-all lint test:*",
+        "test": "COVERAGE=true npm-run-all lint test:*",
         "test:ember": "ember test"
     },
     "devDependencies": {
@@ -87,5 +88,8 @@
     },
     "ember": {
         "edition": "octane"
+    },
+    "dependencies": {
+        "@faker-js/faker": "^7.3.0"
     }
 }

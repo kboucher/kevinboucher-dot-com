@@ -1,14 +1,23 @@
 {{page-title (t "page_titles.resume")}}
 
-<div class="container resume">
-    <header>
-        <h1>{{t "chrome.site_title"}}</h1>
+<div
+    class="container resume"
+    data-test-div="resume"
+>
+    <header data-test-header="resume">
+        <h1 data-test-h1="kevin paul boucher">{{t "chrome.site_title"}}</h1>
         <div class="row">
             <div class="col-12 col-md-6">
-                <span class="h4 mb-1 subtitle">{{t "chrome.position"}}</span>
+                <span
+                    class="h4 mb-1 subtitle"
+                    data-test-span="subtitle"
+                >
+                    {{t "chrome.position"}}
+                </span>
                 <p class="mb-0 mt-2">
                     <a
                         class="icon-link"
+                        data-test-link="resume-pdf"
                         href="/files/KevinBoucherResume2022.pdf"
                         rel="noopener noreferrer"
                         target="_blank"
@@ -25,6 +34,7 @@
                 <ul class="contact-links list-inline">
                     <li class="list-inline-item">
                         <a
+                            data-test-link="linked-in"
                             href="https://www.linkedin.com/in/kevinpaulboucher/"
                             title={{t "labels.view_linked_in_profile"}}
                         >
@@ -33,6 +43,7 @@
                     </li>
                     <li class="list-inline-item">
                         <a
+                            data-test-link="github"
                             href="https://github.com/kboucher"
                             title={{t "labels.view_github_profile"}}
                         >
@@ -41,6 +52,7 @@
                     </li>
                     <li class="list-inline-item">
                         <a
+                            data-test-link="stack-overflow"
                             href="http://stackoverflow.com/users/1588648/kevin-boucher"
                             title={{t "labels.view_stack_overflow_profile"}}
                         >
@@ -49,6 +61,7 @@
                     </li>
                     <li class="list-inline-item">
                         <a
+                            data-test-link="email"
                             href="mailto:kevin@kevinboucher.com?subject=Résumé contact message"
                             title={{t "labels.send_email"}}
                         >
@@ -83,18 +96,36 @@
         <h2>{{t "labels.experience"}}</h2>
 
         {{#each this.positions as |position|}}
-            <div class="position row">
+            <div
+                class="position row"
+                data-test-div="position"
+            >
                 <div class="col-12 col-md-4">
-                    <h3>{{position.title}}</h3>
-                    <p class="position__organization">{{html-safe position.organization}}</p>
-                    <p class="position__date-range">{{html-safe position.dateRange}}</p>
+                    <h3 data-test-header="position-title">{{position.title}}</h3>
+                    <p
+                        class="position__organization"
+                        data-test-paragraph="position-organization"
+                    >
+                        {{html-safe position.organization}}
+                    </p>
+                    <p
+                        class="position__date-range"
+                        data-test-paragraph="position-date-range"
+                    >
+                        {{html-safe position.dateRange}}
+                    </p>
                 </div>
 
                 <div class="col-12 col-md-8">
-                    <p class="position__summary">{{html-safe position.summary}}</p>
+                    <p
+                        class="position__summary"
+                        data-test-paragraph="position-summary"
+                    >
+                        {{html-safe position.summary}}
+                    </p>
                     <ul>
                         {{#each position.details as |detail|}}
-                            <li>{{html-safe detail}}</li>
+                            <li data-test-list-item="position-detail">{{html-safe detail}}</li>
                         {{/each}}
                     </ul>
                 </div>

@@ -2,6 +2,7 @@ export default function() {
     window.server = this; // Expose server for debugging purposes
 
     this.passthrough(
+        '/write-coverage',
         '/images/screenshots/**',
         'https://kevinboucher.com/cgi-bin/formmail.pl',
         'https://kevinboucher.com/cgi-sys/formmail.pl',

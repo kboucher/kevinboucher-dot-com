@@ -1,11 +1,25 @@
 {{page-title (t "page_titles.portfolio")}}
 
 <div class="container page content-page portfolio-page">
-    <h1 class="display-1">{{t "page_titles.portfolio"}}</h1>
-    <div class="row mt-3">
+    <h1
+        class="display-1"
+        data-test-h1="portfolio"
+    >
+        {{t "page_titles.portfolio"}}
+    </h1>
+    <div
+        class="row mt-3"
+        data-test-div="portfolio-entries"
+    >
         {{#each this.portfolioEntries as |portfolioEntry|}}
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <div class="card mb-3 portfolio__entry">
+            <div
+                class="col-md-6 col-lg-4 col-xl-3"
+                data-test-div="portfolio-entry"
+            >
+                <div
+                    class="card mb-3 portfolio__entry"
+                    data-test-div="portfolio-entry-card"
+                >
                     <div class="card-img-top">
                         <ImagePreviewModal
                             @fullWidth={{if (not-eq portfolioEntry.title "Texas.gov") true}}

@@ -5,7 +5,7 @@ module.exports = function(environment) {
         modulePrefix: 'kevinboucher-dot-com',
         environment,
         rootURL: '/',
-        locationType: 'history',
+        locationType: 'hash',
         EmberENV: {
             FEATURES: {
                 /* Here you can enable experimental features on an ember canary build
@@ -48,6 +48,10 @@ module.exports = function(environment) {
 
         ENV.APP.rootElement = '#ember-testing';
         ENV.APP.autoboot = false;
+
+        ENV['ember-cli-mirage'] = {
+            enabled: true,
+        };
     }
 
     if (environment === 'production') {
