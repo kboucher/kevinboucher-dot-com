@@ -1,13 +1,16 @@
 .resume {
     h2 {
-        border-bottom: .0625rem solid $gray-200;
         font-weight: 600;
-        margin-bottom: .75em;
-        padding-bottom: .25em;
     }
 
     h3 {
         font-weight: 600;
+    }
+
+    hr {
+        border: 0;
+        border-bottom: .0625rem solid $gray-500;
+        margin: 1rem 0 1.5rem;
     }
 
     .contact-links {
@@ -31,7 +34,7 @@
     }
 
     .position {
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
 
         &__organization {
             margin-bottom: 0;
@@ -40,6 +43,22 @@
 
     .skill-set {
         ul {
+            padding-left: 2rem;
+        }
+    }
+
+    footer {
+        margin-top: 2rem;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .resume {
+        .contact-links {
+            text-align: right;
+        }
+
+        .skill-set ul {
             padding-left: 1rem;
         }
     }

@@ -1,28 +1,16 @@
 {{page-title (t "page_titles.resume")}}
 
-<div
-    class="container resume"
-    data-test-div="resume"
->
+<div class="container resume" data-test-div="resume">
     <header data-test-header="resume">
         <h1 data-test-h1="kevin paul boucher">{{t "chrome.site_title"}}</h1>
         <div class="row">
             <div class="col-12 col-md-6">
-                <span
-                    class="h4 mb-1 subtitle"
-                    data-test-span="subtitle"
-                >
+                <span class="h4 mb-1 subtitle" data-test-span="subtitle">
                     {{t "chrome.position"}}
                 </span>
                 <p class="mb-0 mt-2">
-                    <a
-                        class="icon-link"
-                        data-test-link="resume-pdf"
-                        href="/files/KevinBoucherResume2023.pdf"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        title={{t "labels.download_resume"}}
-                    >
+                    <a class="icon-link" data-test-link="resume-pdf" href="/files/KevinBoucherResume2025.pdf"
+                        rel="noopener noreferrer" target="_blank" title={{t "labels.download_resume" }}>
                         {{!-- template-lint-disable no-bare-strings --}}
                         <i class="material-icons me-1">picture_as_pdf</i>
                         {{!-- template-lint-enable no-bare-strings --}}
@@ -33,38 +21,26 @@
             <div class="col-12 col-md-6">
                 <ul class="contact-links list-inline">
                     <li class="list-inline-item">
-                        <a
-                            data-test-link="linked-in"
-                            href="https://www.linkedin.com/in/kevinpaulboucher/"
-                            title={{t "labels.view_linked_in_profile"}}
-                        >
+                        <a data-test-link="linked-in" href="https://www.linkedin.com/in/kevinpaulboucher/"
+                            title={{t "labels.view_linked_in_profile" }}>
                             {{t "links.linked_in"}}
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a
-                            data-test-link="github"
-                            href="https://github.com/kboucher"
-                            title={{t "labels.view_github_profile"}}
-                        >
+                        <a data-test-link="github" href="https://github.com/kboucher"
+                            title={{t "labels.view_github_profile" }}>
                             {{t "links.github"}}
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a
-                            data-test-link="stack-overflow"
-                            href="http://stackoverflow.com/users/1588648/kevin-boucher"
-                            title={{t "labels.view_stack_overflow_profile"}}
-                        >
+                        <a data-test-link="stack-overflow" href="http://stackoverflow.com/users/1588648/kevin-boucher"
+                            title={{t "labels.view_stack_overflow_profile" }}>
                             {{t "links.stack_overflow"}}
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a
-                            data-test-link="email"
-                            href="mailto:kevin@kevinboucher.com?subject=Résumé contact message"
-                            title={{t "labels.send_email"}}
-                        >
+                        <a data-test-link="email" href="mailto:kevin@kevinboucher.com?subject=Résumé contact message"
+                            title={{t "labels.send_email" }}>
                             <span class="hide-on-small-only">
                                 {{t "links.email_kevin_boucher"}}
                             </span>
@@ -73,15 +49,54 @@
                 </ul>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <p class="pt-1">
+                    {{t "resume.summary" htmlSafe=true}}
+                </p>
+            </div>
+        </div>
     </header>
 
-    <section class="mt-3">
-        <h2>{{t "labels.skills_set_tools" htmlSafe=true}}</h2>
+    <section>
+        <h2>{{t "labels.experience"}}</h2>
+        <hr>
+        {{#each this.positions as |position index|}}
+            <div class="position row" data-test-div="position">
+                <div class="col-12 col-md-4">
+                    <h3 data-test-header="position-title">{{html-safe position.title}}</h3>
+                    <p class="position__organization" data-test-paragraph="position-organization">
+                        {{html-safe position.organization}}
+                    </p>
+                    <p class="position__date-range" data-test-paragraph="position-date-range">
+                        {{html-safe position.dateRange}}
+                    </p>
+                </div>
 
+                <div class="col-12 col-md-8">
+                    <p class="position__summary" data-test-paragraph="position-summary">
+                        {{html-safe position.summary}}
+                    </p>
+                    <ul>
+                        {{#each position.details as |detail|}}
+                            <li data-test-list-item="position-detail">{{html-safe detail}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            {{#if (lt index (dec this.positions.length))}}
+                <hr>
+            {{/if}}
+        {{/each}}
+    </section>
+
+    <section class="mt-3">
+        <h2>{{t "labels.skills" htmlSafe=true}}</h2>
+        <hr>
         <div class="row">
             {{#each this.skills as |skill|}}
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 skill-set">
-                    <h3>{{skill.category}}</h3>
+                <div class="col-12 col-sm-6 col-md-4 skill-set">
+                    <h3 class="h4">{{skill.category}}</h3>
                     <ul>
                         {{#each skill.details as |detail|}}
                             <li>{{detail}}</li>
@@ -92,51 +107,9 @@
         </div>
     </section>
 
-    <section>
-        <h2>{{t "labels.experience"}}</h2>
-
-        {{#each this.positions as |position|}}
-            <div
-                class="position row"
-                data-test-div="position"
-            >
-                <div class="col-12 col-md-4">
-                    <h3 data-test-header="position-title">{{position.title}}</h3>
-                    <p
-                        class="position__organization"
-                        data-test-paragraph="position-organization"
-                    >
-                        {{html-safe position.organization}}
-                    </p>
-                    <p
-                        class="position__date-range"
-                        data-test-paragraph="position-date-range"
-                    >
-                        {{html-safe position.dateRange}}
-                    </p>
-                </div>
-
-                <div class="col-12 col-md-8">
-                    <p
-                        class="position__summary"
-                        data-test-paragraph="position-summary"
-                    >
-                        {{html-safe position.summary}}
-                    </p>
-                    <ul>
-                        {{#each position.details as |detail|}}
-                            <li data-test-list-item="position-detail">{{html-safe detail}}</li>
-                        {{/each}}
-                    </ul>
-                </div>
-            </div>
-        {{/each}}
-    </section>
-
     <footer>
         <p class="text-center">{{t "chrome.tagline" htmlSafe=true}}</p>
     </footer>
 
     <SiteFooter />
 </div>
-

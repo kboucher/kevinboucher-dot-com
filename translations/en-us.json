@@ -29,7 +29,7 @@
         "name": "Name",
         "message": "Message",
         "send_email": "Send Email",
-        "skills_set_tools": "Skills set &amp; tools",
+        "skills": "Skills",
         "view_linked_in_profile": "View LinkedIn profile",
         "view_github_profile": "View GitHub profile",
         "view_stack_overflow_profile": "View StackOverflow profile"
@@ -55,5 +55,8 @@
         "email": "Your email address",
         "message": "How can I help?",
         "name": "Your name"
+    },
+    "resume": {
+        "summary": "Senior UI Developer with 20+ years of experience leading development teams and delivering high-impact web applications. Proven track record of improving code quality, implementing development processes, and mentoring junior developers across Ember, React, and Angular ecosystems. Expertise in transforming complex requirements into intuitive user experiences."
     }
 }
