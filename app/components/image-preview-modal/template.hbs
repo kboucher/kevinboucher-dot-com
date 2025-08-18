@@ -19,6 +19,7 @@
     <BsModal
         class="image-preview-modal__modal"
         data-test-component="image-preview-modal-modal"
+        @fullscreen="lg"
         @onHidden={{fn (mut this.showModal) false}}
         @size="xl"
         as |Modal|

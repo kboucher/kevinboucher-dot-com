@@ -30,7 +30,7 @@
                     </div>
                     <div class="card-body">
                         <h2>{{portfolioEntry.title}}</h2>
-                        <p>{{portfolioEntry.summary}}</p>
+                        <p>{{html-safe portfolioEntry.summary}}</p>
                         <ul>
                             {{#each portfolioEntry.links as |link|}}
                                 <li>
